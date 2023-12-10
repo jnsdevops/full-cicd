@@ -63,49 +63,15 @@ pipeline{
                 sh 'tfsec . --no-color'
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        stage('Terraform apply'){
+            steps{
+                sh 'terraform apply --auto-approve'
+            }
+        }
+        stage('Terraform apply'){
+            steps{
+                sh 'terraform ${action} --auto-approve'
+            }
+        }
     }
 }
